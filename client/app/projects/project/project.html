@@ -1,11 +1,13 @@
-<div class="project">
-  <div class="main-wrapper">
-    <title-directive data="project"></title-directive>
-    <p>{{ ::project.description }}</p>
-    <p>Created: {{ ::project.createdAt | date:'MMMM dd, yyyy' }}</p>
-    <h4>Tags</h4>
-    <ul>
-      <li ng-repeat="tag in project.tags track by $index"><a ng-href="">{{ ::tag }}</a></li>
-    </ul>
+<div class="main-wrapper project">
+  <title-directive data="project"></title-directive>
+  <div style="clear:both"></div>
+  <div class="sidebar-col" style="float:left;">
+    <profile-card data="project"></profile-card>
+  </div>
+  <div class="main-content-col">
+    <div class="content-card">
+      <p>{{::project.description}}</p>
+      <img class="project-image" ng-if="project.image" ng-src="{{::project.image}}">
+    </div>
   </div>
 </div>
